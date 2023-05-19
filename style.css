@@ -1,0 +1,26 @@
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.digit {
+    /* text-align: center; */
+    padding: 20px;
+    border: 1px solid black;
+    /* height: 45px; */
+}
+
+.digit:hover {
+    background-color: gold;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.calculator > div:last-child {
+    grid-column: 2 / 2;
+    /* background-color: red;; */
+}
