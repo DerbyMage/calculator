@@ -1,17 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
 .calculator {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 500px;
+    border: 1px solid purple;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: repeat(6, 50px); */
+    max-width: 220px;
+    height: 300px;;     
     align-items: center;
     justify-content: center;
     text-align: center;
+    grid-template-areas: "inputer inputer inputer inputer"
+                        "number number number operator"
+                         "number number number operator "
+                         "number number number operator "
+                         "number number number operator "
+                         "number number number operator";
 }
 
 .digit {
     /* text-align: center; */
-    padding: 20px;
+    padding: 10px 2px;
     border: 1px solid black;
+    border-radius: 15px;
     /* height: 45px; */
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-area: number;
+
+}
+
+ .container >div:last-child {
+    grid-column: 2 / 2;
+    background-color: red;
+}
+
+.operator {
+    grid-area: operator;
+    border: 1px solid black;
+    padding: 4px;
+    border-radius: 14px;;
 }
 
 .digit:hover {
@@ -20,7 +54,24 @@
     cursor: pointer;
 }
 
-.calculator > div:last-child {
-    grid-column: 2 / 2;
-    /* background-color: red;; */
+.operator:hover {
+    background-color: gold;
+    transform:scale(1.05);
+    cursor: pointer;
 }
+
+/* .calculator > div:last-child {
+    grid-column:  2/2 ;
+    background-color: red;;
+} */
+
+.inputer {
+    text-align: right;
+    border: 1px solid orange;
+    padding: 10px;
+    /* grid-row: 1 /1;
+    grid-column: 1 / 5; */
+    grid-area: inputer;
+}
+
+/* .operator {grid-area: 'operator'; */
