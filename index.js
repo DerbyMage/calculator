@@ -12,20 +12,21 @@ function calculator() {
        const divver = document.createElement('div')
        divver.appendChild(document.createTextNode(num))
         buttons.appendChild(divver)
-        if(num !== '=')
+        if(num !== '=') {
         divver.addEventListener('click', function() {
             input.textContent += divver.textContent
-        })
-
+        })}
         if(num === '=') {
             divver.addEventListener('click', function() { input.textContent = eval(input.textContent)
 
-            })
-        }
-
-
+      })}
     })
-
+    window.addEventListener('keydown', function(e) {
+        if(e === typeof 'number') {
+            console.log(e.key)
+            input.textContent += e.key
+        }
+    })
 }
 
 calculator()
