@@ -1,77 +1,54 @@
-* {
-    box-sizing: border-box;
+
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: tan;
+}
+
+.input {
+    background-color: tan;
+    grid-column: 1/5;
+    grid-row: 1;
+    border-radius: 10px;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: right;
+
 }
 
 .calculator {
+    background-color: antiquewhite;
     display: grid;
-    border: 1px solid purple;
-    grid-template-columns: repeat(4, 1fr);
-    /* grid-template-rows: repeat(6, 50px); */
-    max-width: 220px;
-    height: 300px;;     
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    grid-template-areas: "inputer inputer inputer inputer"
-                        "number number number operator"
-                         "number number number operator "
-                         "number number number operator "
-                         "number number number operator "
-                         "number number number operator";
-}
-
-.digit {
-    /* text-align: center; */
-    padding: 10px 2px;
-    border: 1px solid black;
-    border-radius: 15px;
-    /* height: 45px; */
-}
-
-
-.container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-area: number;
-
-}
-
- .container >div:last-child {
-    grid-column: 2 / 2;
-    background-color: red;
-}
-
-.operator {
-    grid-area: operator;
-    border: 1px solid black;
-    padding: 4px;
-    border-radius: 14px;;
-}
-
-.digit:hover {
-    background-color: gold;
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-.operator:hover {
-    background-color: gold;
-    transform:scale(1.05);
-    cursor: pointer;
-}
-
-/* .calculator > div:last-child {
-    grid-column:  2/2 ;
-    background-color: red;;
-} */
-
-.inputer {
-    text-align: right;
-    border: 1px solid orange;
     padding: 10px;
-    /* grid-row: 1 /1;
-    grid-column: 1 / 5; */
-    grid-area: inputer;
+    border: 1px solid black;
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: (repeat(4, 1fr), 65px)
+    
 }
 
-/* .operator {grid-area: 'operator'; */
+.numbers{
+    font-size: 22px;
+    font-weight: bold;
+    grid-column: 1 / 5;
+    align-items: center;;
+    text-align: center;
+    grid-row: 2/6;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.numbers > div {
+    border-radius: 13px;
+    padding: 28px;
+}
+
+.numbers > div:hover {
+    background: orange;
+}
+

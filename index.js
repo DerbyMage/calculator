@@ -1,40 +1,31 @@
-const inputer = document.createElement('div')
+function calculator() {
+    const calc = document.querySelector('.calculator')
+    const input = document.createElement('div')
+    const buttons = document.createElement('div')
+    buttons.setAttribute('class', 'numbers')
+    input.setAttribute('class', 'input')
+    calc.appendChild(input)
+    calc.appendChild(buttons)
 
-const calculator = function() {
-    const container = document.createElement('div')
-    container.setAttribute('class', 'container')
+    const numbers = [1, 2, 3, '+', 4, 5, 6, '-', 7, 8, 9, '*', '.', 0, '=', '/']
+    numbers.forEach(num => {
+       const divver = document.createElement('div')
+       divver.appendChild(document.createTextNode(num))
+        buttons.appendChild(divver)
+        if(num !== '=')
+        divver.addEventListener('click', function() {
+            input.textContent += divver.textContent
+        })
 
-    inputer.setAttribute('class', 'inputer')
-    document.querySelector('.calculator').appendChild(inputer)
-    const numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-    const buttons = ['+', '-', '*', '/', '=']
+        if(num === '=') {
+            divver.addEventListener('click', function() { input.textContent = eval(input.textContent)
 
-    numArray.forEach(num => {
-       const newDiv =  document.createElement('div')
-       const text = document.createTextNode(num)
-       newDiv.setAttribute('class', 'digit')
-       newDiv.appendChild(text)
-       container.appendChild(newDiv)
-       document.querySelector('.calculator').appendChild(container)
+            })
+        }
+
+
     })
-const operContainer = document.createElement('div')
-    buttons.forEach(btn => {
-        const newDiv = document.createElement('div')
-        const text= document.createTextNode(btn)
-        newDiv.setAttribute('class', 'operator')
-        newDiv.appendChild(text)
-        operContainer.appendChild(newDiv)
-    })
-    document.querySelector('.calculator').appendChild(operContainer)
 
 }
 
-
 calculator()
-
-
-
-document.querySelectorAll('.digit').forEach(node => node.addEventListener('click', function(e) {
-    inputer.innerText += e.target.innerText
-    console.log(e)
-}))
