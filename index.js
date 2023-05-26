@@ -17,9 +17,8 @@ function calculator() {
             input.textContent += divver.textContent
         })}
         if(num === '=') {
-            divver.addEventListener('click', function() { input.textContent = eval(input.textContent)
-
-      })}
+            divver.addEventListener('click', function() { input.textContent = eval(input.textContent)}
+ )}
     })
     window.addEventListener('keydown', function(e) {
         if(e === typeof 'number') {

@@ -9,6 +9,7 @@ body {
 }
 
 .input {
+    height: 35px;
     background-color: tan;
     grid-column: 1/5;
     grid-row: 1;
