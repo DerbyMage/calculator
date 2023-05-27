@@ -17,6 +17,7 @@ body {
     font-size: 32px;
     font-weight: bold;
     text-align: right;
+    overflow-wrap: break-word;
 
 }
 
